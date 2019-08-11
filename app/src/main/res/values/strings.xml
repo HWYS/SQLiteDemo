@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">SQLiteDemo</string>
+    <string name="genre">Genre</string>
+    <string name="movie">Movie</string>
+    <string name="enter_genre_name">Enter Genre Name</string>
+    <string name="save">Save</string>
+</resources>
