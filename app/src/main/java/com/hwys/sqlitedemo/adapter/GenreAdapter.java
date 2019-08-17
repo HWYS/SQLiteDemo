@@ -1,6 +1,8 @@
 package com.hwys.sqlitedemo.adapter;
 
 import android.content.DialogInterface;
+import android.content.Intent;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,6 +14,7 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.hwys.sqlitedemo.R;
+import com.hwys.sqlitedemo.UpdateGenreActivity;
 import com.hwys.sqlitedemo.db.MovieDb;
 import com.hwys.sqlitedemo.model.GenreModel;
 
@@ -37,7 +40,11 @@ public class GenreAdapter extends RecyclerView.Adapter<GenreAdapter.ViewHolder> 
         holder.ibtnEdit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent i = new Intent(v.getContext(), UpdateGenreActivity.class);
+                Bundle b = new Bundle();
+                b.putParcelable("Update_Genre", genreModelList.get(position));
+                i.putExtras(b);
+                v.getContext().startActivity(i);
             }
         });
         holder.ibtnDelete.setOnClickListener(new View.OnClickListener() {

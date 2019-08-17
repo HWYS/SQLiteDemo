@@ -58,6 +58,7 @@ public class GenreActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
+        genreModelArrayList.clear();
         genreModelArrayList.addAll(db.getAllGenre());
         adapter = new GenreAdapter(genreModelArrayList);
         rvGenre.setAdapter(adapter);

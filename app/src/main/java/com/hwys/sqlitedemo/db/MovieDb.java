@@ -77,6 +77,18 @@ public class MovieDb extends SQLiteOpenHelper {
         }
     }
 
+    public boolean updateGenreByDbUpdate(GenreModel model){
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues cv = new ContentValues();
+        cv.put("g_name", model.getgName());
+        try{
+            db.update("tbl_Genre", cv, "g_id=?", new String[]{String.valueOf(model.getgId())});
+            return true;
+        }catch (Exception e){
+            return false;
+        }
+    }
+
     public boolean deleteGenre(int gId){
         SQLiteDatabase db = this.getWritableDatabase();
         try{
