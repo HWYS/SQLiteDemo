@@ -30,4 +30,33 @@
         app:layout_constraintEnd_toEndOf="@+id/btnGenre"
         app:layout_constraintStart_toStartOf="@+id/btnGenre"
         app:layout_constraintTop_toBottomOf="@+id/btnGenre" />
+
+    <fragment
+        android:id="@+id/fragment"
+        android:name="com.hwys.sqlitedemo.BlankFragment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/btnMovie"
+        tools:layout="@layout/fragment_blank" />
+
+    <com.google.android.material.tabs.TabLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:layout_editor_absoluteX="60dp"
+        tools:layout_editor_absoluteY="268dp">
+
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/tabItem"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tab2"
+            android:icon="@mipmap/ic_launcher"/>
+
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/tabItem2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tab3" />
+    </com.google.android.material.tabs.TabLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
